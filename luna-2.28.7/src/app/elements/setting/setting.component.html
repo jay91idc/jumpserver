@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>{{"Setting"| translate}}</h1>
+
+<div *ngIf="hasLicense()">
+  <label class="field-label">{{ 'RDP client options' | translate }}</label>
+  <section>
+    <mat-checkbox [(ngModel)]="setting.rdpFullScreen" class="example-margin">{{ 'Full screen'| translate}}</mat-checkbox>
+    <mat-checkbox [(ngModel)]="setting.rdpDrivesRedirect" style="padding-left: 20px">{{ 'Driver redirect'| translate}}</mat-checkbox>
+  </section>
+</div>
+
+<mat-form-field style="padding-top: 15px">
+  <mat-select [(value)]="setting.rdpResolution"
+    placeholder="{{'RDP resolution'| translate}}" >
+    <mat-option *ngFor="let s of resolutionsChoices" value="{{s}}">{{s}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field >
+  <input [(ngModel)]="setting.fontSize" matInput placeholder='{{"CLI font size"| translate}}' name="fontSize" type="number" min="5" max="60" >
+</mat-form-field>
+
+<mat-form-field>
+  <mat-select [(value)]="setting.backspaceAsCtrlH"
+    placeholder="{{'Backspace as Ctrl+H'| translate }}" >
+    <mat-option *ngFor="let s of boolChoices"  value="{{s.value}}">{{s.name| translate}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-select [(value)]="setting.isLoadTreeAsync"
+    placeholder="{{'Load tree async'| translate }}" >
+    <mat-option *ngFor="let s of boolChoices"  value="{{s.value}}">{{s.name| translate}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-select [(value)]="setting.quickPaste"
+              placeholder="{{'Right mouse quick paste'| translate }}" >
+    <mat-option *ngFor="let s of boolChoices"  value="{{s.value}}">{{s.name| translate}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div style="float: right; padding-top: 20px">
+  <button mat-raised-button (click)="onNoClick()">{{"Cancel"| translate}}</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()">{{"Confirm"| translate}}</button>
+</div>

@@ -1,0 +1,192 @@
+@import './mixin.scss';
+@import './transition.scss';
+@import './sidebar.scss';
+@import './menu.scss';
+@import './fonts/font-awesome.min.css';
+
+::-webkit-scrollbar {
+  width:14px;
+}
+::-webkit-scrollbar-track {
+  border-radius:10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  box-shadow: 8px 10px 20px #C6C6C6 inset;
+  border: 3px solid rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: 8px 10px 20px #878787 inset;
+}
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: auto;
+  color: #676a6c;
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.428;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+// main-container global css
+.app-container {
+  padding: 20px;
+}
+
+.el-tooltip__popper.is-light.help-tips div span {
+  padding: 50px;
+}
+
+.white-bg {
+  background-color: #ffffff;
+}
+
+.small, small {
+  font-size: 85%;
+}
+
+.text-navy {
+  color: $--color-primary;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+.m-b-xs {
+  margin-bottom: 5px;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+.h4, .h5, .h6, h4, h5, h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h3, h4, h5 {
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+// 弹窗里的List table中的搜索框
+
+.el-dialog__body div.table-action-right-side {
+  padding-top: 10px;
+}
+
+.filter-field.right-side-item.action-search {
+  height: 36px;
+}
+
+
+.el-dialog__body {
+  padding-top: 10px;
+}
+
+.help-block {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #737373;
+  font-size: 13px
+}
+
+input[type=file] {
+  font-size: 12px;
+  opacity: 80;
+}
+
+.el-table__body {
+  width: 100%;
+  table-layout: fixed !important;
+}
+
+.el-table__column-filter-trigger i {
+  color: #888888 !important;
+}
+
+.el-tooltip__popper.is-dark {
+  max-width: 60% !important;
+}
+
+.view-switcher {
+  .el-menu--popup-bottom-start {
+    margin-top: 0!important;
+  }
+  .el-menu--popup {
+    min-width: 70px!important;
+  }
+}
+
+.el-col.el-col-sm-24 .ibox {
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.el-pagination {
+  overflow: auto;
+}
